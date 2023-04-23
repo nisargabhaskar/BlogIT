@@ -5,7 +5,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cloudhack-1
+  name: blogit-1
   labels:
     app: mongodb
 spec:
@@ -95,7 +95,7 @@ spec:
     spec:
       containers:
       - name: flask-server-deployment
-        image: blogit
+        image: nisargabhaskar/blogit
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5001
