@@ -79,11 +79,11 @@ Feel free to play around for brownie points!
 ## All Done! :)
 
 
-How to execute it 
-'''
+## How to execute it 
+```
 minikube start
 ./run.sh
 minikube service flask-server-deployment --url
 
 Go visit the ip address mentioned after running the above code
-'''
+```
