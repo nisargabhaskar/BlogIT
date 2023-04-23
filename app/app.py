@@ -5,8 +5,8 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-user = 'admin'           # username as set for the mongodb admin server (the username used in secret.yaml - before base64 conversion)
-password = 'admin'       # password as set for the mongodb admin server (the password used in secret.yaml - before base64 conversion)
+user = 'YWRtaW4='           # username as set for the mongodb admin server (the username used in secret.yaml - before base64 conversion)
+password = 'YWRtaW4='       # password as set for the mongodb admin server (the password used in secret.yaml - before base64 conversion)
 host = 'mongodb-service'    # service name of the mongodb admin server as set in the service for mongodb server
 port = '27017'              # port number of the mongodb admin server as set in the service for mongodb server
 conn_string = f'mongodb://{user}:{password}@{host}:{port}'
@@ -71,4 +71,4 @@ def deletePost():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port="5003", debug=True)
+    app.run(host="0.0.0.0", port="5001", debug=True)

@@ -95,7 +95,7 @@ spec:
     spec:
       containers:
       - name: flask-server-deployment
-        image: nisargabhaskar/blogit
+        image: nisargabhaskar/blogit:1.0.4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5001

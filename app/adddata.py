@@ -1,27 +1,18 @@
+from datetime import datetime
 from pymongo import MongoClient
-user = 'admin'
-password = 'admin'
+user = 'YWRtaW4='
+password = 'YWRtaW4='
 host = 'mongodb-service'
 port = '27017'
 conn_string = f'mongodb://{user}:{password}@{host}:{port}'
-client = MongoClient(conn_string)
 
-# switch to the 'blog' database
-db = client['blog']
+db = MongoClient(conn_string).blog
+def insert(title,author,createdAt):
+    try:
+        db.posts.insert_one({"title": title, "author": author, "createdAt": createdAt})
+    except:
+        return -1
 
-# get a reference to the 'posts' collection
-collection = db['posts']
-
-# create a document to be inserted into the collection
-post = {
-    'title': 'My First Blog Post',
-    'content': 'This is the content of my first blog post.',
-    'author': 'John Doe',
-    'date': '2023-04-22'
-}
-
-# insert the document into the collection
-result = collection.insert_one(post)
-
-# print the ID of the inserted document
-print(result.inserted_id)
+insert("Shadow City","Taran N. Khan",datetime.strptime("2019-10-12","%Y-%m-%d"))
+insert("In Cold Blood","Truman Capote",datetime.strptime("1965-05-16","%Y-%m-%d"))
+insert("Breakfast at Tiffany's","Truman Capote",datetime.strptime("1958-10-28","%Y-%m-%d"))
